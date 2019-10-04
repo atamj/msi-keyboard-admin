@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>MSI KEYBOARD</title>
 </head>
 <body>
 <?php
@@ -22,7 +22,17 @@ fclose($config);
         background-color: black;
         color: white;
     }
-
+    table select{
+        width: 100%;
+        height: 40px;
+    }
+    input[type="submit"]{
+        height: 30px;
+        width: 50%;
+        background-color: deepskyblue;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
     .red {
         background-color: red;
     }
@@ -86,7 +96,6 @@ fclose($config);
     <table>
         <tr>
             <th id="left" class="<?= $file->lcolor ?>">Left</th>
-            <td><label for="lcolor">Color</label></td>
             <td>
                 <select id="lcolor" name="lcolor">
                     <option data-cible="#left" class="color" value="off" <?php if ($file->lcolor == 'red') echo 'selected'; ?> >Off</option>
@@ -101,9 +110,6 @@ fclose($config);
                 </select>
             </td>
             <td>
-                <label for="lintensities">Intensities</label>
-            </td>
-            <td>
                 <select id="lintensities" name="lintensities">
                     <option value="hight" <?php if ($file->lintensities == 'hight') echo 'selected'; ?> >Hight</option>
                     <option value="medium" <?php if ($file->lintensities == 'medium') echo 'selected'; ?> >Medium
@@ -115,7 +121,6 @@ fclose($config);
         </tr>
         <tr>
             <th id="middle" class="<?= $file->mcolor ?>">Middle</th>
-            <td><label for="mcolor">Color</label></td>
             <td>
                 <select id="mcolor" name="mcolor">
                     <option data-cible="#middle" class="color" value="off" <?php if ($file->mcolor == 'off') echo 'selected'; ?> >Off</option>
@@ -130,9 +135,6 @@ fclose($config);
                 </select>
             </td>
             <td>
-                <label for="mintensities">Intensities</label>
-            </td>
-            <td>
                 <select id="mintensities" name="mintensities">
                     <option value="hight" <?php if ($file->mintensities == 'hight') echo 'selected'; ?> >Hight</option>
                     <option value="medium" <?php if ($file->mintensities == 'medium') echo 'selected'; ?> >Medium
@@ -145,9 +147,6 @@ fclose($config);
         <tr>
             <th id="right" class="<?= $file->rcolor ?>">Right</th>
             <td>
-                <label for="rcolor">Color</label>
-            </td>
-            <td>
                 <select id="rcolor" name="rcolor">
                     <option data-cible="#right" class="color" value="off" <?php if ($file->rcolor == 'off') echo 'selected'; ?> >Off</option>
                     <option data-cible="#right" class="color" value="red" <?php if ($file->rcolor == 'red') echo 'selected'; ?> >Red</option>
@@ -159,9 +158,6 @@ fclose($config);
                     <option data-cible="#right" class="color" value="purple" <?php if ($file->rcolor == 'purple') echo 'selected'; ?> >Purple</option>
                     <option data-cible="#right" class="color" value="white" <?php if ($file->rcolor == 'white') echo 'selected'; ?> >White</option>
                 </select>
-            </td>
-            <td>
-                <label for="rintensities">Intensities</label>
             </td>
             <td>
                 <select id="rintensities" name="rintensities">
