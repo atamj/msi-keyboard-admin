@@ -1,9 +1,7 @@
 <?php
 $config = fopen('config.json', 'r') or die("Unable to open file!");
 $file = json_decode(fread($config,filesize("config.json")));
-var_dump($file->mode);
 fclose($config);
-die();
 ?>
 <style>
     table {
@@ -19,11 +17,11 @@ die();
     <div style="margin-bottom: 20px;">
         <label for="mode">Mode</label>
         <select id="mode" name="mode">
-            <option value="normal" <?php ($file->mode == 'normal') ? echo 'selected' : echo ''; ?> >Normal</option>
-            <option value="gaming" <?php ($file->mode == 'gaming') ? echo 'selected' : echo ''; ?> >Gaming</option>
-            <option value="breathe" <?php ($file->mode == 'breathe') ? echo 'selected' : echo ''; ?> >Breathe</option>
-            <option value="demo" <?php ($file->mode == 'demo') ? echo 'selected' : echo ''; ?> >Demo</option>
-            <option value="wave" <?php ($file->mode == 'wave') ? echo 'selected' : echo ''; ?> >Wave</option>
+            <option value="normal" <?php if ($file->mode == 'normal'){echo 'selected';} ?> >Normal</option>
+            <option value="gaming" <?php if ($file->mode == "gaming"){echo 'selected';} ?> >Gaming</option>
+            <option value="breathe" <?php if ($file->mode == "breathe"){echo 'selected';} ?> >Breathe</option>
+            <option value="demo" <?php if ($file->mode == "demo"){echo 'selected';} ?> >Demo</option>
+            <option value="wave" <?php if ($file->mode == "wave"){echo 'selected';} ?> >Wave</option>
         </select>
     </div>
 
@@ -33,15 +31,15 @@ die();
             <td><label for="lcolor">Color</label></td>
             <td>
                 <select id="lcolor" name="lcolor">
-                    <option value="off" <?php ($file->lcolor == 'off') ? echo 'selected' : echo ''; ?> >Off</option>
-                    <option value="red" <?php ($file->lcolor == 'red') ? echo 'selected' : echo ''; ?> >Red</option>
-                    <option value="orange" <?php ($file->lcolor == 'orange') ? echo 'selected' : echo ''; ?> >Orange</option>
-                    <option value="yellow" <?php ($file->lcolor == 'yellow') ? echo 'selected' : echo ''; ?> >Yellow</option>
-                    <option value="green" <?php ($file->lcolor == 'green') ? echo 'selected' : echo ''; ?> >Green</option>
-                    <option value="sky" <?php ($file->lcolor == 'sky') ? echo 'selected' : echo ''; ?> >Sky</option>
-                    <option value="blue" <?php ($file->lcolor == 'blue') ? echo 'selected' : echo ''; ?> >Blue</option>
-                    <option value="purple" <?php ($file->lcolor == 'purple') ? echo 'selected' : echo ''; ?> >Purple</option>
-                    <option value="white" <?php ($file->lcolor == 'white') ? echo 'selected' : echo ''; ?> >White</option>
+                    <option value="off" <?php if ($file->lcolor == 'red') echo 'selected'; ?> >Off</option>
+                    <option value="red" <?php if ($file->lcolor == 'red') echo 'selected'; ?> >Red</option>
+                    <option value="orange" <?php if ($file->lcolor == 'orange') echo 'selected'; ?> >Orange</option>
+                    <option value="yellow" <?php if ($file->lcolor == 'yellow') echo 'selected'; ?> >Yellow</option>
+                    <option value="green" <?php if ($file->lcolor == 'green') echo 'selected'; ?> >Green</option>
+                    <option value="sky" <?php if ($file->lcolor == 'sky') echo 'selected'; ?> >Sky</option>
+                    <option value="blue" <?php if ($file->lcolor == 'blue') echo 'selected'; ?> >Blue</option>
+                    <option value="purple" <?php if ($file->lcolor == 'purple') echo 'selected'; ?> >Purple</option>
+                    <option value="white" <?php if ($file->lcolor == 'white') echo 'selected'; ?> >White</option>
                 </select>
             </td>
             <td>
@@ -49,10 +47,10 @@ die();
             </td>
             <td>
                 <select id="lintensities" name="lintensities">
-                    <option value="hight" <?php ($file->lintensities == 'hight') ? echo 'selected' : echo ''; ?> >Hight</option>
-                    <option value="medium" <?php ($file->lintensities == 'medium') ? echo 'selected' : echo ''; ?> >Medium</option>
-                    <option value="low" <?php ($file->lintensities == 'low') ? echo 'selected' : echo ''; ?> >Low</option>
-                    <option value="light" <?php ($file->lintensities == 'light') ? echo 'selected' : echo ''; ?> >Light</option>
+                    <option value="hight" <?php if ($file->lintensities == 'hight') echo 'selected'; ?> >Hight</option>
+                    <option value="medium" <?php if ($file->lintensities == 'medium') echo 'selected'; ?> >Medium</option>
+                    <option value="low" <?php if ($file->lintensities == 'low') echo 'selected'; ?> >Low</option>
+                    <option value="light" <?php if ($file->lintensities == 'light') echo 'selected'; ?> >Light</option>
                 </select>
             </td>
         </tr>
@@ -61,15 +59,15 @@ die();
             <td><label for="mcolor">Color</label></td>
             <td>
                 <select id="mcolor" name="mcolor">
-                    <option value="off" <?php ($file->mcolor == 'off') ? echo 'selected' : echo ''; ?> >Off</option>
-                    <option value="red" <?php ($file->mcolor == 'red') ? echo 'selected' : echo ''; ?> >Red</option>
-                    <option value="orange" <?php ($file->mcolor == 'orange') ? echo 'selected' : echo ''; ?> >Orange</option>
-                    <option value="yellow" <?php ($file->mcolor == 'yellow') ? echo 'selected' : echo ''; ?> >Yellow</option>
-                    <option value="green" <?php ($file->mcolor == 'green') ? echo 'selected' : echo ''; ?> >Green</option>
-                    <option value="sky" <?php ($file->mcolor == 'sky') ? echo 'selected' : echo ''; ?> >Sky</option>
-                    <option value="blue" <?php ($file->mcolor == 'blue') ? echo 'selected' : echo ''; ?> >Blue</option>
-                    <option value="purple" <?php ($file->mcolor == 'purple') ? echo 'selected' : echo ''; ?> >Purple</option>
-                    <option value="white" <?php ($file->mcolor == 'white') ? echo 'selected' : echo ''; ?> >White</option>
+                    <option value="off" <?php if ($file->mcolor == 'off') echo 'selected'; ?> >Off</option>
+                    <option value="red" <?php if ($file->mcolor == 'red') echo 'selected'; ?> >Red</option>
+                    <option value="orange" <?php if ($file->mcolor == 'orange') echo 'selected'; ?> >Orange</option>
+                    <option value="yellow" <?php if ($file->mcolor == 'yellow') echo 'selected'; ?> >Yellow</option>
+                    <option value="green" <?php if ($file->mcolor == 'green') echo 'selected'; ?> >Green</option>
+                    <option value="sky" <?php if ($file->mcolor == 'sky') echo 'selected'; ?> >Sky</option>
+                    <option value="blue" <?php if ($file->mcolor == 'blue') echo 'selected'; ?> >Blue</option>
+                    <option value="purple" <?php if ($file->mcolor == 'purple') echo 'selected'; ?> >Purple</option>
+                    <option value="white" <?php if ($file->mcolor == 'white') echo 'selected'; ?> >White</option>
                 </select>
             </td>
             <td>
@@ -77,10 +75,10 @@ die();
             </td>
             <td>
                 <select id="mintensities" name="mintensities">
-                    <option value="hight">Hight</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                    <option value="light">Light</option>
+                    <option value="hight" <?php if ($file->mintensities == 'hight') echo 'selected'; ?> >Hight</option>
+                    <option value="medium" <?php if ($file->mintensities == 'medium') echo 'selected'; ?> >Medium</option>
+                    <option value="low" <?php if ($file->mintensities == 'low') echo 'selected'; ?> >Low</option>
+                    <option value="light" <?php if ($file->mintensities == 'light') echo 'selected'; ?> >Light</option>
                 </select>
             </td>
         </tr>
@@ -91,15 +89,15 @@ die();
             </td>
             <td>
                 <select id="rcolor" name="rcolor">
-                    <option value="off">Off</option>
-                    <option value="red">Red</option>
-                    <option value="orange">Orange</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="green">Green</option>
-                    <option value="sky">Sky</option>
-                    <option value="blue">Blue</option>
-                    <option value="purple">Purple</option>
-                    <option value="white">White</option>
+                    <option value="off" <?php if ($file->rcolor == 'off') echo 'selected'; ?> >Off</option>
+                    <option value="red" <?php if ($file->rcolor == 'red') echo 'selected'; ?> >Red</option>
+                    <option value="orange" <?php if ($file->rcolor == 'orange') echo 'selected'; ?> >Orange</option>
+                    <option value="yellow" <?php if ($file->rcolor == 'yellow') echo 'selected'; ?> >Yellow</option>
+                    <option value="green" <?php if ($file->rcolor == 'green') echo 'selected'; ?> >Green</option>
+                    <option value="sky" <?php if ($file->rcolor == 'sky') echo 'selected'; ?> >Sky</option>
+                    <option value="blue" <?php if ($file->rcolor == 'blue') echo 'selected'; ?> >Blue</option>
+                    <option value="purple" <?php if ($file->rcolor == 'purple') echo 'selected'; ?> >Purple</option>
+                    <option value="white" <?php if ($file->rcolor == 'white') echo 'selected'; ?> >White</option>
                 </select>
             </td>
             <td>
@@ -107,10 +105,10 @@ die();
             </td>
             <td>
                 <select id="rintensities" name="rintensities">
-                    <option value="hight">Hight</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                    <option value="light">Light</option>
+                    <option value="hight" <?php if ($file->rintensities == 'hight') echo 'selected'; ?> >Hight</option>
+                    <option value="medium" <?php if ($file->rintensities == 'medium') echo 'selected'; ?> >Medium</option>
+                    <option value="low" <?php if ($file->rintensities == 'low') echo 'selected'; ?> >Low</option>
+                    <option value="light" <?php if ($file->rintensities == 'light') echo 'selected'; ?> >Light</option>
                 </select>
             </td>
         </tr>
