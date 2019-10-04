@@ -183,11 +183,10 @@ fclose($config);
 
 <?php
 if (isset($_POST['mode'])) {
-    shell_exec("msi-keyboard -m '" . $_POST['mode'] . "' -c left,'" . $_POST['lcolor'] . "','" . $_POST['lintensities'] . "' -c middle,'" . $_POST['mcolor'] . "','" . $_POST['mintensities'] . "' -c right,'" . $_POST['rcolor'] . "','" . $_POST['rintensities'] . "'");
-
     $config = fopen('config.json', 'w') or die("Unable to open file!");
     fwrite($config, json_encode($_POST));
     fclose($config);
+    shell_exec("msi-keyboard -m '" . $_POST['mode'] . "' -c left,'" . $_POST['lcolor'] . "','" . $_POST['lintensities'] . "' -c middle,'" . $_POST['mcolor'] . "','" . $_POST['mintensities'] . "' -c right,'" . $_POST['rcolor'] . "','" . $_POST['rintensities'] . "'");
 }
 ?>
 <script
