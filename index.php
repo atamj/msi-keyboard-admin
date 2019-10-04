@@ -27,7 +27,7 @@ fclose($config);
 
     <table>
         <tr>
-            <th>Left</th>
+            <th id="left">Left</th>
             <td><label for="lcolor">Color</label></td>
             <td>
                 <select id="lcolor" name="lcolor">
@@ -55,7 +55,7 @@ fclose($config);
             </td>
         </tr>
         <tr>
-            <th>Middle</th>
+            <th id="middle">Middle</th>
             <td><label for="mcolor">Color</label></td>
             <td>
                 <select id="mcolor" name="mcolor">
@@ -83,14 +83,14 @@ fclose($config);
             </td>
         </tr>
         <tr>
-            <th>Right</th>
+            <th id="right">Right</th>
             <td>
                 <label for="rcolor">Color</label>
             </td>
             <td>
                 <select id="rcolor" name="rcolor">
                     <option value="off" <?php if ($file->rcolor == 'off') echo 'selected'; ?> >Off</option>
-                    <option value="red" <?php if ($file->rcolor == 'red') echo 'selected'; ?> >Red</option>
+                    <option style="background-color: red;" value="red" <?php if ($file->rcolor == 'red') echo 'selected'; ?> >Red</option>
                     <option value="orange" <?php if ($file->rcolor == 'orange') echo 'selected'; ?> >Orange</option>
                     <option value="yellow" <?php if ($file->rcolor == 'yellow') echo 'selected'; ?> >Yellow</option>
                     <option value="green" <?php if ($file->rcolor == 'green') echo 'selected'; ?> >Green</option>
@@ -118,9 +118,11 @@ fclose($config);
             </td>
         </tr>
     </table>
-
-
 </form>
+
+    <script>
+
+    </script>
 
 <?php
 if (isset($_POST['mode'])) {
